@@ -7,6 +7,8 @@ public class Animal : MonoBehaviour
 {
     [SerializeField] private float m_AnimalSpeed;
     [SerializeField] private GameObject[] animals;
+
+    // ENCAPSULATION IMPLEMENTED
     public float AnimalSpeed
     {
         get { return m_AnimalSpeed; }
@@ -26,6 +28,7 @@ public class Animal : MonoBehaviour
     protected void Start()
     {
         SpawnAnimals();
+        PrintInformation();
     }
 
     // ABSTRACTION
@@ -35,5 +38,10 @@ public class Animal : MonoBehaviour
         {
             Instantiate(animals[i]);
         }
+    }
+    // POLYMORPHISM IMPLEMENTED
+    public virtual void PrintInformation()
+    {
+        print("Animal Max Speed: " + m_AnimalSpeed);
     }
 }
