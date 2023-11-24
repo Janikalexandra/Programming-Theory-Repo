@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Animal : MonoBehaviour
+
+public abstract class Animal: MonoBehaviour
 {
     [SerializeField] private float m_AnimalSpeed;
-    [SerializeField] private GameObject[] animals;
 
     // ENCAPSULATION IMPLEMENTED
     public float AnimalSpeed
@@ -25,23 +25,10 @@ public class Animal : MonoBehaviour
         }
     }
 
-    protected void Start()
-    {
-        SpawnAnimals();
-        PrintInformation();
-    }
-
-    // ABSTRACTION
-    protected void SpawnAnimals()
-    {
-        for(int i = 0; i < animals.Length; i++)
-        {
-            Instantiate(animals[i]);
-        }
-    }
     // POLYMORPHISM IMPLEMENTED
-    public virtual void PrintInformation()
+    public virtual void PrintInformation(float speed)
     {
+        m_AnimalSpeed = speed;
         print("Animal Max Speed: " + m_AnimalSpeed);
     }
 }

@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class Sloth : Animal
 {
-    public float slothMaxSpeed;
-    public string animalName;
-
-    public override void PrintInformation()
-    {       
-        print("Animal Max Speed: " + slothMaxSpeed);
+    public override void PrintInformation(float speed)
+    {
+        print("Animal Max Speed: " + speed);
+        AnimalSpeed = speed;
     }
 
     private void OnMouseDown()
     {
-        AnimalSpeed = slothMaxSpeed;
-        PrintInformation();
+        AnimalSpeed = 3;
+        PrintInformation(3);
     }
 }

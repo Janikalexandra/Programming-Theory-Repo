@@ -2,15 +2,15 @@
 // INHERITANCE IMPLEMENTED
 public class Dog : Animal
 {
-    public float dogMaxSpeed;
-    public override void PrintInformation()
+
+    public override void PrintInformation(float speed)
     {
-        print("Animal Max Speed " + dogMaxSpeed);
+        print("Animal Max Speed " + speed);
     }
 
     private void OnMouseDown()
     {
-        AnimalSpeed = dogMaxSpeed;
-        PrintInformation();
+        AnimalSpeed = 35;
+        PrintInformation(35);
     }
 }

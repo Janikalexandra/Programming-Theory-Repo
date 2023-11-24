@@ -2,15 +2,14 @@
 // INHERITANCE IMPLEMENTED
 public class Cat : Animal
 {
-    public float catMaxSpeed;
-    public override void PrintInformation()
+    public override void PrintInformation(float speed)
     {
-        print("Animal Max Speed " + catMaxSpeed);
+        print("Animal Max Speed " + speed);
     }
 
     private void OnMouseDown()
     {
-        AnimalSpeed = catMaxSpeed;
-        PrintInformation();
+        AnimalSpeed = 40;
+        PrintInformation(40);
     }
 }
